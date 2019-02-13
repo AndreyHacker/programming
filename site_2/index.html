@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title>Document</title>
+</head>
+<body>
+	<label for="check1">1
+	 <input type="radio" name="1" id="check1" >
+	</label>
+	<label for="check2">2
+	 <input type="radio" name="2" id="check2">
+	</label>
+	<label for="check3">3
+	 <input type="radio" name="3" id="check3">
+	</label>
+	<input type="button" value="Выбрать" id="butt">
+
+</body>
+<script>
+
+		butt.onclick = function(){
+
+		var rad1 = document.querySelector('#check1');
+		var rad2 = document.querySelector('#check2');
+		var rad3 = document.querySelector('#check3');
+		if(rad1.checked){
+			alert("Вы выбрали 1")
+		}else if(rad2.checked){
+			alert("Вы выбрали 2");
+		}else{
+			alert("Вы выбрали 3");
+		}
+		rad1.checked = false;
+		rad2.checked = false;
+		rad3.checked = false;
+	}
+	
+	
+/*	function check() {
+		var rad = document.querySelector('#check1').checked;
+		alert(rad.checked);
+	}
+		*/
+/*document.addEventListener('keydown',function (event) {
+			if(event.keyCode == '87'){alert("up");}
+			})*/
+
+
+	</script>
+</html>
