@@ -1,0 +1,45 @@
+*{ 
+	margin:0; padding:0;
+}
+
+ body{
+ width:100%; 
+ font-size:6vw; 
+}
+
+.header{
+
+font-size:110%; 
+padding:10px 0 10px 0; 
+background:#32CD32;
+width:100%;
+text-align:center; 
+color:white; 
+position:fixed;  
+top:0; 
+}
+.index_text{
+
+}
+.nav {
+	position:fixed;
+	top:-35px;
+	left:5px; 
+	display:flex; 
+	justify-content: flex-start;  
+	font-size:230%;   
+}
+.container{
+	 margin-top:20%; 
+	text-align:center; 
+	color:blue;
+}
+.play img{
+width: 75%;
+max-width: 75%;
+height: auto;
+
+}
+
+
+

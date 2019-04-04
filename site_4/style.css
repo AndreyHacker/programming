@@ -1,0 +1,22 @@
+*{
+	font-size: 2vw;
+
+}
+ p{
+ 	-webkit-text-stroke: 0.5px black;
+ }
+input[type=submit]{
+	border-radius:10px;
+	background-color: blue;
+	color: white;
+	opacity:0.8;
+	transition: 0.5s;
+	outline:none; 
+}
+input[type=submit]:hover{
+	background-color:white;
+	color: blue;
+	cursor:pointer;
+	border:2px solid black;
+	box-shadow:3px 2px 2px 1px;  
+}
