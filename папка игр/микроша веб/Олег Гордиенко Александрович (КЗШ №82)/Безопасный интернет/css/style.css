@@ -1,0 +1,65 @@
+*{
+margin: 0 auto;
+font-family: Arial;
+}
+.menu a{
+text-decoration: none;
+color: White;
+font-family: Arial Black, Arial;
+font-size: 20px;
+display: block;
+padding: 5px;
+}
+.menu{
+float: left;
+padding: 5px;
+background: #3d3d3d;
+width: 15%;
+border-radius: 3px;
+
+}
+.menu a:hover{
+text-shadow: 1px 1px 1px Gray;
+background: #4d4d4d;
+border-radius: 3px;
+}
+.content{
+margin-top: 10px;
+padding: 10px;
+background: White;
+width: 85%;
+border: 1px dashed Black;
+padding-top: 10px;
+word-spacing: 5px;
+
+}
+.all{
+width: 80%;
+}
+.content img{
+float: left;
+}
+.info{
+clear: both;
+text-align: center;
+padding: 50px;
+font-size: 20px;
+}
+.info h1{
+padding-bottom: 20px;
+font-size: 40px;
+font-family: Arial Black;
+}
+.footer{
+clear: both;
+padding: 50px;
+background: White;
+text-align: center;
+border-radius: 100px;
+border: 1px dotted #4d4d4d;
+width: 70%;
+margin-top: 50px;
+}
+.footer h1{
+font-family: Arial Black, Arial;
+}

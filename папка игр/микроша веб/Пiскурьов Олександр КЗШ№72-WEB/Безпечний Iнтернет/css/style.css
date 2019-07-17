@@ -1,0 +1,30 @@
+body{
+margin:0 auto 0 auto;
+}
+.headertext p{
+font-size:45px;
+margin:0 0 0 800px;
+color:orange;
+} 
+.headerimg img{
+float:left;
+}
+.spisok li{
+font-size:30px;
+color:pink;
+margin:0 0 0 500px;
+}
+.headerimg1 img{
+float:right;
+}
+.wrappertxt p{
+margin:300px 0 0 0;
+font-size:25px;
+color:orange;
+}
+.wrapperimg img{
+margin:100px 0 0 100px;
+}
+.h11 h1{
+margin:0 0 400px 0;
+}

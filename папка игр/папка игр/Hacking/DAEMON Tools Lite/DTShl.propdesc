@@ -1,0 +1,25 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xmlns="http://schemas.microsoft.com/windows/2006/propertydescription"
+        schemaVersion="1.0" >
+    <propertyDescriptionList publisher="DTSOFT" product="DAEMON Tools">
+        <propertyDescription name="DTSOFT.ImageCatalog.ImagePath" formatID="{621C440C-448F-4bbe-A1B0-1836FFE43028}" propID="3">
+            <description>Image path.</description>
+            <searchInfo inInvertedIndex="false" isColumn="false" />
+            <typeInfo canStackBy="true" type="String"/>
+            <labelInfo label="Image path"/>
+        </propertyDescription>
+        <propertyDescription name="DTSOFT.ImageCatalog.ImageSize" formatID="{818733AD-FB60-493d-B7AB-A84034BCEE99}" propID="3">
+            <description>Image size</description>
+            <searchInfo inInvertedIndex="false" isColumn="false" />
+            <typeInfo canStackBy="true" type="Int32"/>
+            <labelInfo label="Image size"/>
+        </propertyDescription>
+        <propertyDescription name="DTSOFT.ImageCatalog.ImageFormat" formatID="{64F17DC2-6681-4c21-9D47-5AB791C6A7F5}" propID="3">
+            <description>Format</description>
+            <searchInfo inInvertedIndex="false" isColumn="false" />
+            <typeInfo canStackBy="false" type="Int32"/>
+            <labelInfo label="Format"/>
+        </propertyDescription>
+    </propertyDescriptionList>
+</schema>
+    

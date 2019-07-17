@@ -1,0 +1,6 @@
+﻿.box{
+	width: 960px;
+	height: 100%;
+	background-image: url(images.jpg);
+	background: red;
+}

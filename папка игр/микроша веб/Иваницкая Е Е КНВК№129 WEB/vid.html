@@ -1,0 +1,52 @@
+﻿<html>
+	<head>
+		<meta charset = "UTF8">
+       		<link rel = "stylesheet" href = "style.css">
+		<script>
+			var slider = {
+				slides : ['37___1.jpg', 'disuption-275x226.jpg', 'globalcompet.jpg', 'i.jpeg', 'Internet.jpg'],
+				frame : 0,
+				set: function(image) {
+					document.getElementById("scr").style.backgroundImage = "url(" + image + ")";
+				},
+				init: function() {
+					this.set(this.slides[this.frame]);
+				},
+				left: function() {
+					this.frame--;
+					if (this.frame < 0) this.frame = this.slides.length - 1;
+					this.set(this.slides[this.frame]);
+				},
+				right: function() {
+					this.frame++;
+					if (this.frame == this.slides.length) this.frame = 0;
+					this.set(this.slides[this.frame]);
+				},
+			};
+			window:onload =  {
+				slider.init();	
+			};
+		</script>
+	</head>
+	<body>
+		<header>
+			<a href = "index.html"> Главная </a>
+			<a href = "pravbez.html"> Правила безпеки </a>
+			<a href = "ten.html"> Десять фактів </a>
+			<a href = "batkam.html"> Батькам </a>
+			<a href = "garach.html"> Гаряча лінія </a>
+			<a href = "vid.html"> Відео </a>
+		</header>
+		<div class = "gl">
+			
+			<h3>Цікаві відео</h3>	
+			<video src="film_o_pravilah_bezopasnosti_v_internet.mp4" controls="controls">  </video>
+			<video src="videoplayback (1).mp4" controls="controls">  </video>
+			<video src="videoplayback (2).mp4" controls="controls">  </video>
+			<video src="videoplayback.mp4" controls="controls">  </video>
+			<video src="ya_za_bezpechniy_internet.mp4" controls="controls">  </video>
+			<video src="Інтернет безпека.mp4" controls="controls">  </video>
+		</div>
+<footer >Microsha - 2018 </footer>
+	</body>
+</html>

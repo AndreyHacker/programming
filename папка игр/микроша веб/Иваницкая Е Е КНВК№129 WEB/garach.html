@@ -1,0 +1,56 @@
+﻿<html>
+	<head>
+		<meta charset = "UTF8">
+       		<link rel = "stylesheet" href = "style.css">
+		<script>
+			var slider = {
+				slides : ['37___1.jpg', 'disuption-275x226.jpg', 'globalcompet.jpg', 'i.jpeg', 'Internet.jpg'],
+				frame : 0,
+				set: function(image) {
+					document.getElementById("scr").style.backgroundImage = "url(" + image + ")";
+				},
+				init: function() {
+					this.set(this.slides[this.frame]);
+				},
+				left: function() {
+					this.frame--;
+					if (this.frame < 0) this.frame = this.slides.length - 1;
+					this.set(this.slides[this.frame]);
+				},
+				right: function() {
+					this.frame++;
+					if (this.frame == this.slides.length) this.frame = 0;
+					this.set(this.slides[this.frame]);
+				},
+			};
+			window:onload =  {
+				slider.init();	
+			};
+		</script>
+	</head>
+	<body>
+		<header>
+			<a href = "index.html"> Главная </a>
+			<a href = "pravbez.html"> Правила безпеки </a>
+			<a href = "ten.html"> Десять фактів </a>
+			<a href = "batkam.html"> Батькам </a>
+			<a href = "garach.html"> Гаряча лінія </a>
+			<a href = "vid.html"> Відео </a>
+		</header>
+		<div class = "gl">
+			
+			<h3>Гарячі лінії з інтернет-безпеки</h3>	
+			<img src = "images (1).jpg" width = "100px" height = "100px" style = "margin : auto;">
+			<p style = "text-align : center;">
+В разі необхідності, ви можете звернутись за консультацією до експертів, котрі нададуть вам компетентну допомогу. <br>
+                    Online-bezpeka.kyivstar.ua – консультант з онлайн-безпеки від компанії “Київістар" <br>
+                     Internetbezpeka.org.ua – тут ви можете повідомити про випадки дитячої порнографії в інтернеті. <br>
+                     Національна "гаряча" лінія з питань протидії домашньому насильству і захисту прав дітей – 0 800 500 335 (безкоштовно для дзвінків із стаціонарних телефонів на території України) та 386 (безкоштовно для дзвінків з телефонів мобільних операторів "Київстар" та "МТС") <br>
+                     Телефон Довіри МВС України: +38044 254 76 04 <br>
+ 
+			</p>
+			
+		</div>
+<footer >Microsha - 2018 </footer>
+	</body>
+</html>

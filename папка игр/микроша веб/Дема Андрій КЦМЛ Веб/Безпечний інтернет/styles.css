@@ -1,0 +1,123 @@
+﻿* {
+margin: 0;
+padding: 0;
+font-family: Arial;
+text-decoration: none;
+transition: 0.2s;
+}
+
+body {
+background: url(images/bg.jpg);
+background-size: cover;
+}
+
+header {
+position: fixed;
+background: rgb(30,140,30);
+height: 100%;
+width: 200px;
+color: white;
+box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+}
+
+header h1 {
+font-size: 20px;
+margin: 30px 0 40px 20px
+}
+
+header ul {
+list-style-type: none;
+}
+
+header li {
+padding: 10px 20px;
+}
+
+header li:hover {
+background: rgb(30,170,30);
+}
+
+header li a {
+color: white;
+}
+
+header li.selected {
+background: rgb(0,100,0);
+padding-left: 25px;
+}
+
+.page {
+width: 100%;
+padding-left: 200px;
+box-sizing: border-box;
+}
+
+.container {
+width: 860px;
+margin: auto;
+box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+line-height: 160%;
+border-radius: 0 0 3px 3px;
+background: white;
+margin-bottom: 60px;
+padding-bottom: 20px;
+}
+
+.container h1 {
+padding-top: 30px;
+text-align: center;
+margin-bottom: 20px;
+}
+
+.container h2 {
+margin-top: 20px;
+text-align: center;
+margin: 5px 0;
+}
+
+.container h3 {
+margin: 20px;
+}
+
+.container p {
+margin: 20px;
+}
+
+.container i {
+float: left;
+margin: 20px;
+}
+
+.container img {
+border-radius: 2px;
+}
+.container img.centered {
+width: 100%;
+}
+
+.container img.right {
+float: right;
+margin: 20px;
+}
+
+.container img.left {
+float: left;
+margin: 20px;
+}
+
+.container a {
+color: rgb(30,140,30);
+}
+
+.container a:hover {
+color: rgb(30,170,30);
+}
+
+.container a:active {
+color: rgb(0,100,0);
+}
+
+video {
+width: 100%;
+margin: 10px 0;
+}

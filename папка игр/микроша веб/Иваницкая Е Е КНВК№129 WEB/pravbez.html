@@ -1,0 +1,58 @@
+﻿<html>
+	<head>
+		<meta charset = "UTF8">
+       		<link rel = "stylesheet" href = "style.css">
+		<script>
+			var slider = {
+				slides : ['37___1.jpg', 'disuption-275x226.jpg', 'globalcompet.jpg', 'i.jpeg', 'Internet.jpg13:24 08.02.201813:27 08.02.201813:31 08.02.2018'],
+				frame : 0,
+				set: function(image) {
+					document.getElementById("scr").style.backgroundImage = "url(" + image + ")";
+				},
+				init: function() {
+					this.set(this.slides[this.frame]);
+				},
+				left: function() {
+					this.frame--;
+					if (this.frame < 0) this.frame = this.slides.length - 1;
+					this.set(this.slides[this.frame]);
+				},
+				right: function() {
+					this.frame++;
+					if (this.frame == this.slides.length) this.frame = 0;
+					this.set(this.slides[this.frame]);
+				},
+			};
+			window:onload =  {
+				slider.init();	
+			};
+		</script>
+	</head>
+	<body>
+		<header>
+			<a href = "index.html"> Главная </a>
+			<a href = "pravbez.html"> Правила безпеки </a>
+			<a href = "ten.html"> Десять фактів </a>
+			<a href = "batkam.html"> Батькам </a>
+			<a href = "garach.html"> Гаряча лінія </a>
+			<a href = "vid.html"> Відео </a>
+		</header>
+		<div class = "gl">
+			
+			<h3>Правила безпеки в Інтернеті для дітей</h3>	
+			<img src = "images.jpg" width = "100px" height = "100px" >
+			<ul>
+				<li> Нікому без дозволу батьків не давати особисту інформацію: домашню адресу, номер домашнього телефону, робочу адресу батьків, їхній номер телефону, назву й адресу школи, свої паролі.</li>
+				<li>Якщо знайдете якусь інформацію, що турбує вас, негайно сповістіть про це батьків.</li>
+  				<li>Ніколи не погоджуватися на зустріч з людиною, з якою ви познайомилися в Інтернеті. Якщо все ж таки це необхідно, то спочатку потрібно спитати дозволу батьків, а зустріч повинна відбутися в громадському місці й у присутності батьків. </li>
+				<li>Не відповідати на невиховані і грубі листи. Якщо одержите такі листи не з вашої вини, то сповістіть про це батьків, нехай вони зв'яжуться з компанією, що надає послуги Інтернет. </li>
+				<li>Розробити з батьками правила користування Інтернетом. Особливо домовитися з ними про прийнятний час роботи в Інтернеті і сайти, до яких ви збираєтесь заходити. </li>
+				<li> Не заходити на аморальні сайти і не порушувати без згоди батьків ці правила.</li>
+				<li>Не робити протизаконних вчинків і речей в Інтернеті. </li> 
+				<li>Не шкодити і не заважати іншим користувачам.  </li>
+			</ul>
+			
+		</div>
+<footer >Microsha - 2018 </footer>
+	</body>
+</html>

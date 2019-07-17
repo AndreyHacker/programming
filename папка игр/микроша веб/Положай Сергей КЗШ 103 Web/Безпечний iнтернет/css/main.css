@@ -1,0 +1,61 @@
+*{
+	margin:	0;
+	padding: 0;
+}
+body{
+	background-color: #c1c1c1;
+}
+
+header{
+	width: 1200px;
+	heigth:	250px;
+	backrground-color: black;
+	
+}
+	
+.header-wrapper{
+	font-family: 'Veradana', sans-serif;
+	padding: 15px;
+
+}
+
+li{
+	display: inline-block;
+	margin: 15px;
+}
+
+ul{
+	margin:	0;
+	text-decoration: none;
+	width:	100%;
+	
+}
+
+
+
+.header-wrapper a{
+	text-decoration: none;
+	color: #000;
+}
+
+.header-wrapper	a:hover{
+	border-bottom: 2px solid black;
+}
+
+
+/**Main**/
+
+
+.content{
+	margin-top: 25px;	
+	margin-left: 15px;
+	font-size: 15px;
+}
+
+hr{
+	margin-top: 10px;
+}
+.txt1{
+	margin-top:15px;	
+}
+
