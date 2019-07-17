@@ -1,0 +1,41 @@
+body{
+margin:0;
+font-size:30px; 
+	font-family: Arial;
+
+}
+
+
+a{text-decoration:none;color: #fff;}
+li{
+	border:1px solid black; 
+	-webkit-transition:0.1s linear background-color;
+	border-top:1px solid  #c4c4c4 ;  
+margin-top:1px; 
+	
+	    list-style-type: none; /* Убираем маркеры */
+background-color:#c4c4c4;
+color: #fff;
+width:10%;
+text-align: center;  
+
+}
+li:hover{
+	background-color:red;
+
+}
+li ul{
+display: none;
+	position: absolute;
+		min-width:50%;
+	
+		-webkit-transition:0.25s linear opacity; /* В Webkit выпадающие пункты будут проявляться */
+
+}
+li:hover ul{
+	display: block;
+	top:7px; 
+	opacity: 1;
+ 
+	left:7.97%;
+}

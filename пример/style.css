@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans');
+
+table {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 20px;
+    padding: 15px;
+    margin: 70px auto 0;
+    border: solid 1px rgb(172, 169, 169);
+    box-shadow: 0 0 10px rgb(98, 97, 97), 0 0 20px rgb(80, 79, 79);
+    border-radius: 10px;
+}
+
+thead {
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+input {
+    height: 25px;
+    border: solid 1px rgb(172, 169, 169);
+    box-shadow: 0 0 4px rgb(98, 97, 97);
+    border-radius: 10px;
+    outline: none;
+    padding: 0 5px;
+    transition: 0.3s;
+}
+
+input:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 0 22px rgb(98, 97, 97);
+}
+
+button {
+    height: 25px;
+    width: 140px;
+    color: aliceblue;
+    text-transform: uppercase;
+    border-radius: 10px;
+    background-color: rgb(59, 58, 58); 
+    border: solid 1px rgb(172, 169, 169);
+    outline: none;
+    transition: 0.1s;
+}
+
+button:active {
+    transform: translateY(-4px);
+    box-shadow: 0 0 5px 8px rgb(98, 97, 97), 0 0 9px 11px rgb(53, 52, 52);
+}

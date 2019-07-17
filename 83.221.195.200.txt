@@ -1,0 +1,3 @@
+83.221.195.200
+browser-sync start --server --files "php/*.php,css/*.css,js/*.js,html/*.html,*.*"
+again suspend mention autumn frown surround cheer bounce decision mountain lift lady curl stupid rest mamaQWERTYQWERTYQWER
