@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { Component }  from 'react';
 import logo from './logo.svg';
 import { render } from '@testing-library/react';
 import './Photos.css';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-
-
-const clientWidth = String(document.body.clientWidth);
-const clientHeight = String(document.body.clientHeight);
-let windowWidth = String(document.body.clientWidth * 0.4);
-let windowHeight = String(document.body.clientHeight * 0.4);
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from 'react-loader-spinner';
 
 export default class Photos extends React.Component {
 
   constructor(props) {
     super(props)
+    
+    this.modalWindow = React.createRef();
+    this.shadow = React.createRef();
+    this.error = React.createRef();
+    this.name = React.createRef();
+    this.comment = React.createRef();
+    this.commentsBox = React.createRef();
     this.state = {
       error: null,
       isLoaded: false,
@@ -23,6 +26,7 @@ export default class Photos extends React.Component {
       isSelected: false
     };
   }
+
 
   async post(url,textPost){
       try{
@@ -34,129 +38,162 @@ export default class Photos extends React.Component {
     }
 
   postComment= ()=>{
-    
-    let text = document.querySelectorAll('input[type=text]'),
-    comments = document.querySelector('.comments'),
-    id = this.state.skopeItems.id,
+    let id = this.state.skopeItems.id,
     url = 'https://boiling-refuge-66454.herokuapp.com/images/'+id+'/comments',
     textPost = {
-                name:text[0].value,
-                comment:text[1].value,
-                sid:id
+                name:this.name.current.value,
+                comment:this.comment.current.value,
+                id:id
                };
+     if(this.name.current.value == '' || this.comment.current.value == ''){
+       this.error.current.innerHTML = 'Вы оставили поле пустым';
+    }else{
+      
+      console.log(this.state.skopeItems.comments);
+      this.state.skopeItems.comments.push({name:this.name.current.value+':',text: this.comment.current.value})
+      this.skopeImg();
   
-    comments.innerHTML +=text[0].value+': '+ text[1].value + '<br><br>';
-    text[0].value = '';
-    text[1].value = '';
+    this.name.current.value = '';
+    this.comment.current.value = '';
+    this.error.current.innerHTML = '';
+    }
 
     this.post(url,textPost);
 
   }
 
-  changeState() {
-    fetch('https://boiling-refuge-66454.herokuapp.com/images/')
-      .then(res => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            isLoaded: true,
-            items: result,
-          }
-          )
-        },
-        (error) =>
-          this.setState({
-            isLoaded: true,
-            error
-          }
-          )
-      )
+  async changeState() {
+    await axios.get('https://boiling-refuge-66454.herokuapp.com/images/')
+     .then(
+      (result) => {
+        this.setState({
+          isLoaded: true,
+          items: result.data
+        });
+      })
+      .catch(error =>{
+        this.setState({
+          isLoaded: true,
+          error: error
+        })
+         
+    });
   }
 
   componentDidMount() {
+
     this.changeState();
   }
 
   renderWindow = () => {
-    
+   
     return (
       <div className="window" >
         <img src={String(this.state.skopeItems.url)}></img>
-        <div className='comments'>
-          {
-
-            this.state.skopeItems.comments.map(item => (
-              <p>{item.text}</p>
-
-            )
+        <div className='comments' ref={this.commentsBox}>
+          {            
+            this.state.skopeItems.comments.map(item =>{
+              if(item.name)
+                return <p>{item.name+item.text}</p>
+              else
+                return <p>{'Неизвестный: '+item.text}</p>
+            }                                              
            )
           }
+        
+        </div><div className='inputs'>
+        <input type='text' placeholder='Имя' className="nameBox" ref={this.name} />
+        <br></br>
+        <input type='text' className='commentBox' placeholder='Коментарий' ref={this.comment}/>
         </div>
-        <input type='text' placeholder='Имя' />
-        <br></br>
-        <input type='text' placeholder='Коментарий'/>
-        <br></br>
+       
+      
         <input type='submit' onClick={this.postComment} value='Отправить' />
+        <p ref={this.error} className="error"></p>
       </div>
    )
+   
+  }
+  async skopeFetch(id){
+    await axios.get('https://boiling-refuge-66454.herokuapp.com/images/' + id)
+     .then(
+      (result) => {
+        this.setState({
+          isLoaded: true,
+          skopeItems: result.data
+        });
+      })
+      .catch(error =>{
+        this.setState({
+          isLoaded: true,
+          error: error
+        })
+         
+    });
+
+     this.skopeImg();
   }
 
-  async skopeImg(id) {
-    await fetch('https://boiling-refuge-66454.herokuapp.com/images/' + id)
-      .then(res => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            isLoaded: true,
-            skopeItems: result
-          }
-          )
-        },
-        (error) =>
-          this.setState({
-            isLoaded: true,
-            error
-          }
-          )
-      )
+   skopeImg() { 
+    if(document.querySelector('.window')){
 
-    ReactDOM.render(this.renderWindow(), document.querySelector('.modal_window'));
-    document.querySelector('.modal_window').style.display = 'block';
-    document.querySelector('.shadow').style.display = 'block';
-  }
-
-  breakSkope(){
-    document.querySelector('.shadow').style.display = 'none';
-    document.querySelector('.modal_window').style.display = 'none';
-    document.querySelector('.comments').innerHTML = '';
-  }
-
-  itemsJSX = () => {
-    if (this.state.error) {
-      return <p>Error error.message</p>
+    ReactDOM.hydrate(this.renderWindow(), document.querySelector('.modal_window'));
+    
+    this.modalWindow.current.style.display = 'block';
+    this.shadow.current.style.display = 'block';
     }
-    else if (!this.state.isLoaded) {
-      return <p>Loading...</p>
-    } else {
+  }
+
+  breakSkope(shadow,modalWindow){
+    modalWindow.current.style.display = 'none';
+    shadow.current.style.display = 'none';
+  }
+
+  renderError(error){
+    return <p>Error {this.state.error.message}</p>
+  }
+  loader(){
+    return(
+    <div className="loader">
+       <Loader
+         type="Oval"
+         color="black"
+         height={80}
+         width={80}
+         timeout={3000}
+      />
+    </div>
+    ) 
+  }
+  itemsJSX = () => {
       return (
         <div className="Photos">
 
-          <div className="modal_window" ></div>
+          <div className="modal_window" style={{display:'block'}} ref={this.modalWindow}>
+            <div className='window'></div>
+          </div>
 
-          <div className='shadow' onClick={this.breakSkope} ></div>
+          <div className='shadow' onClick={()=>{this.breakSkope(this.shadow,this.modalWindow)}} ref={this.shadow}></div>
           {
             this.state.items.map(item => (
-              <img src={item.url} id={item.id} onClick={() => this.skopeImg(item.id)} />
+              <img src={item.url} id={item.id} onClick={() => this.skopeFetch(item.id)} />
             )
            )
           }
         </div >
       );
     }
-  }
+  
 
   render() {
-    return this.itemsJSX()
+    if(this.state.error){
+      return this.renderError()
+    }
+    else if (!this.state.isLoaded) {
+      return this.loader();
+    }else{
+      return this.itemsJSX()
+    }
   }
 }
 

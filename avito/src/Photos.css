@@ -2,6 +2,7 @@ img{
     margin:5%;
     border:1px solid grey;
     max-width: 75%;
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
 }
 
 .modal_window{
@@ -16,15 +17,27 @@ img{
     transform: translate(-50%, -50%) 
 }
 .window{
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
     border: 1px solid black;
     border-radius: 3px;
-    background:white;
-   
+    background:#ffff;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 input[type=text]{
-   max-width: 30%;
-   width:25%;
+    margin-top: 5px;
+   border: 1px solid #cccccc;
+   border-radius: 3px; 
+   -webkit-border-radius: 3px; 
+   -moz-border-radius: 3px; 
+   -khtml-border-radius: 3px; 
+   background: #ffffff !important; 
+   outline: none; 
+   height: 24px; 
+  
+   color: #cccccc;
+   font-size: 100%;
+   
 }
 .shadow{
     position: absolute;
@@ -39,5 +52,55 @@ input[type=text]{
     flex-direction:column;
     justify-content:flex-end;
     text-align: left;
-    margin-left:15%;
+    margin-left:12%;
+}
+
+input[type=submit]{
+    outline: none;
+    background: #4997d0;
+    margin:5px;
+    border-radius: 2px;
+    font-size: 1.7vw;
+    border:none;
+    color :white;
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+    
+}
+input[type=submit]:hover{
+    cursor: pointer;
+    color :#4997d0;
+    background:white;
+    border:1px solid #4997d0;
+    margin:4px;
+    
+}
+input[type="text"]:focus {
+    color: #000000;
+    border: 1px solid #000000
+  }
+.error{
+    color:red;
+}
+.loader{
+    position: fixed;
+    text-align: center;
+    top: 46%;
+    left: 49%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+    
+}
+.inputs{
+    margin-left: 12%;
+    text-align: left;
+}
+.commentBox{
+    width:84%;
+    height: 50px;
+}
+.nameBox{
+    width:30%;
+}
+p{
+    margin-top:0px;
 }
