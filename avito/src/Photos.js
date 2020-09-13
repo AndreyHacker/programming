@@ -169,7 +169,7 @@ export default class Photos extends React.Component {
       return (
         <div className="Photos">
 
-          <div className="modal_window" style={{display:'block'}} ref={this.modalWindow}>
+          <div className="modal_window" style={{display:'none'}} ref={this.modalWindow}>
             <div className='window'></div>
           </div>
 
