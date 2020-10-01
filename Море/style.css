@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 18px;
+}
+.content{
+   position: relative;
+    margin-left:9%;
+    margin-right:9%;
+}
+.order ul img{
+    width: 60px;
+    height:60px;
+}
+
+.order ul{
+    padding-inline-start: 0px;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
+input[type=date]{
+    font-family: "Ionicons";
+}
+input[type='text']{
+    margin-top: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    background: #ffffff !important;
+    outline: none;
+    height: 24px;
+    color: #cccccc;
+    font-size: 100%;
+    padding: 0; 
+    padding: 0;
+    padding-left: 20px;
+    display: block;
+    width: 100%;
+    height: inherit !important;
+    font-size: 18px;
+    border: none !important;
+    color: rgba(255, 255, 255, 0.4) !important;
+    background: transparent !important;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+}
+.order ul li{
+    margin: 15px;
+    align-items:center;
+   
+}
+.order{
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    
+    width: 60%;
+    color:rgba(255, 255, 255, 0.8);
+    background:#33313b;
+}
+.center{
+    margin-top: 25%;
+    text-align: center;
+}
+.nav{
+    display: flex;
+    justify-content: space-around;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+.nav ul{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+}
+.nav ul li{
+ 
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #fff;
+   
+    opacity: 1 !important;
+}
+li{
+    list-style-type: none; 
+}
+header{
+    background: linear-gradient(
+        rgba(255,89,89, 0.2), 
+        rgba(47,136,252, 0.2)
+      ), url(./img/bg1.jpg);
+    -webkit-background-size: cover;
+    position: absolute;
+    background-size: cover;
+    width:100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+@font-face { 
+    font-family: "Poppins";  
+    src: url("./fonts/Poppins.zip") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+    } 
